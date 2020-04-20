@@ -1,6 +1,12 @@
 # BR-CovidTracker
 API para recuperar os dados da Covid-19 no Brasil em um CSV e passar via Json com filtros
 
+## Fonte
+
+https://github.com/wcota/covid19br
+
+https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities-time.csv
+
 ## Formato do Json
 
 {
