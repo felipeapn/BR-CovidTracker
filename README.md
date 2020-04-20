@@ -1,7 +1,7 @@
 # BR-CovidTracker
 API para recuperar os dados da Covid-19 no Brasil em um CSV e passar via Json com filtros
 
-Formato do Json
+# Formato do Json
 
 {
 "date": "2020-02-25",
@@ -15,8 +15,10 @@ Formato do Json
 "totalCases": 1
 }
 
-FILTROS DA URL
+# FILTROS DA URL
+
 city -> Nome da cidade seguida de "/sigla estado"
+
 http://localhost:8080/daylydata?city=S%C3%A3o%20Paulo/SP
 
 state -> Sigla do Estado.
