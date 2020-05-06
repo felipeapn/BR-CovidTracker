@@ -94,4 +94,8 @@ public class CovidDataService {
 			this.allPredicates.add(element -> element.getCity().compareToIgnoreCase(filter.getCity()) == 0);
 		}
 	}
+
+	public DaylyVirusData getLastDay() {
+		return this.virusDataList.get(this.virusDataList.size() - 1);
+	}
 }
