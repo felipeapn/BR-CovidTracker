@@ -29,8 +29,6 @@ public class CovidDataService {
 
 	private List<DaylyVirusData> virusDataList;
 
-	List<Predicate<DaylyVirusData>> allPredicates;
-
 	@PostConstruct
 	@Scheduled(cron = "* * 1 * * *")
 	public void fechVirusData() throws IOException, InterruptedException {
@@ -55,7 +53,10 @@ public class CovidDataService {
 			daylyVirusData.setDeaths(Integer.parseInt(record.get("deaths")));
 			daylyVirusData.setNewCases(Integer.parseInt(record.get("newCases")));
 			daylyVirusData.setTotalCases(Integer.parseInt(record.get("totalCases")));
-
+			daylyVirusData.setDeathsPer100kInhabitants(Double.parseDouble(record.get("deaths_per_100k_inhabitants")));
+			daylyVirusData.setTotalCasesPer100kInhabitants(Double.parseDouble(record.get("totalCases_per_100k_inhabitants")));
+			daylyVirusData.setDeathsByTotalCases(Double.parseDouble(record.get("deaths_by_totalCases")));
+			
 			this.virusDataList.add(daylyVirusData);
 		}
 
@@ -63,36 +64,39 @@ public class CovidDataService {
 
 	public List<DaylyVirusData> getDaylyVirusData(DaylyVirusDataFilter filter) {
 
-		this.createPredicate(filter);
+		List<Predicate<DaylyVirusData>> allPredicates = this.createPredicate(filter);
 
-		return this.virusDataList.stream().filter(this.allPredicates.stream().reduce(x -> true, Predicate::and))
+		return this.virusDataList.stream().filter(allPredicates.stream().reduce(x -> true, Predicate::and))
 				.collect(Collectors.toList());
 	}
 
-	private void createPredicate(DaylyVirusDataFilter filter) {
-		this.allPredicates = new ArrayList<>();
+	private List<Predicate<DaylyVirusData>> createPredicate(DaylyVirusDataFilter filter) {
+			
+		List<Predicate<DaylyVirusData>> allPredicates = new ArrayList<>();
 
 		if (filter.getFromDay() != null && !filter.getFromDay().isEmpty()) {
-			this.allPredicates.add(
+			allPredicates.add(
 					element -> element.getDate().isAfter(LocalDate.parse(filter.getFromDay()).minusDays(1)));
 		}
 		
 		if (filter.getToDay() != null && !filter.getToDay().isEmpty()) {
-			this.allPredicates.add(
+			allPredicates.add(
 					element -> element.getDate().isBefore(LocalDate.parse(filter.getToDay()).plusDays(1)));
 		}
 
 		if (filter.getCountry() != null && !filter.getCountry().isEmpty()) {
-			this.allPredicates.add(element -> element.getCountry().compareToIgnoreCase(filter.getCountry()) == 0);
+			allPredicates.add(element -> element.getCountry().compareToIgnoreCase(filter.getCountry()) == 0);
 		}
 
 		if (filter.getState() != null && !filter.getState().isEmpty()) {
-			this.allPredicates.add(element -> element.getState().compareToIgnoreCase(filter.getState()) == 0);
+			allPredicates.add(element -> element.getState().compareToIgnoreCase(filter.getState()) == 0);
 		}
 
 		if (filter.getCity() != null && !filter.getCity().isEmpty()) {
-			this.allPredicates.add(element -> element.getCity().compareToIgnoreCase(filter.getCity()) == 0);
+			allPredicates.add(element -> element.getCity().compareToIgnoreCase(filter.getCity()) == 0);
 		}
+		
+		return allPredicates;
 	}
 
 	public DaylyVirusData getLastDay() {

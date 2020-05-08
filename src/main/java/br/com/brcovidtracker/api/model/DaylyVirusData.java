@@ -16,5 +16,8 @@ public class DaylyVirusData {
 	private int deaths;
 	private int newCases;
 	private int totalCases;
+	private double deathsPer100kInhabitants;
+	private double totalCasesPer100kInhabitants;
+	private double deathsByTotalCases;
 
 }
