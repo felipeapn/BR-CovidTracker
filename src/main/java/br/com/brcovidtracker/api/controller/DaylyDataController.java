@@ -27,7 +27,7 @@ public class DaylyDataController {
 	
 	@GetMapping("/lastDay")
 	public DaylyVirusData getLastDay () {
-		return covidDataService.getLastDay();
+		return covidDataService.getLastDayData();
 	}
 	
 }

@@ -1,0 +1,191 @@
+[
+	{
+		"initial": "AC",
+		"name": "Acre",
+		"capital": "Rio Branco",
+		"lat": -9.9765362,
+		"lon": -67.8220778
+	},
+	{
+		"initial": "AL",
+		"name": "Alagoas",
+		"capital": "Maceió",
+		"lat": -9.6476843,
+		"lon": -35.7339264
+	},
+	{
+		"initial": "AM",
+		"name": "Amazonas",
+		"capital": "Manaus",
+		"lat": -3.1316333,
+		"lon": -59.9825041
+	},
+	{
+		"initial": "AP",
+		"name": "Amapá",
+		"capital": "Macapá",
+		"lat": 0.0401529,
+		"lon": -51.0569588
+	},
+	{
+		"initial": "BA",
+		"name": "Bahia",
+		"capital": "Salvador",
+		"lat": -12.7503331,
+		"lon": -48.2352148
+	},
+	{
+		"initial": "CE",
+		"name": "Ceará",
+		"capital": "Fortaleza",
+		"lat": -28.798596,
+		"lon": -53.224906
+	},
+	{
+		"initial": "DF",
+		"name": "Distrito Federal",
+		"capital": "Brasília",
+		"lat": -16.2075114,
+		"lon": -44.430559
+	},
+	{
+		"initial": "ES",
+		"name": "Espírito Santo",
+		"capital": "Vitória",
+		"lat": -18.8465718,
+		"lon": -50.1292823
+	},
+	{
+		"initial": "GO",
+		"name": "Goiás",
+		"capital": "Goiânia",
+		"lat": -16.8226769,
+		"lon": -49.2452546
+	},
+	{
+		"initial": "MA",
+		"name": "Maranhão",
+		"capital": "São Luís",
+		"lat": -16.5210639,
+		"lon": -50.3726281
+	},
+	{
+		"initial": "MG",
+		"name": "Minas Gerais",
+		"capital": "Belo Horizonte",
+		"lat": -19.9227318,
+		"lon": -43.9450948
+	},
+	{
+		"initial": "MS",
+		"name": "Mato Grosso do Sul",
+		"capital": "Campo Grande",
+		"lat": -20.4640173,
+		"lon": -54.6162947
+	},
+	{
+		"initial": "MT",
+		"name": "Mato Grosso",
+		"capital": "Cuiabá",
+		"lat": -15.5986686,
+		"lon": -56.0991301
+	},
+	{
+		"initial": "PA",
+		"name": "Pará",
+		"capital": "Belém",
+		"lat": -9.5715351,
+		"lon": -36.492841
+	},
+	{
+		"initial": "PB",
+		"name": "Paraíba",
+		"capital": "João Pessoa",
+		"lat": -7.1215981,
+		"lon": -34.882028
+	},
+	{
+		"initial": "PE",
+		"name": "Pernambuco",
+		"capital": "Recife",
+		"lat": -8.0641931,
+		"lon": -34.8781517
+	},
+	{
+		"initial": "PI",
+		"name": "Piauí",
+		"capital": "Teresina",
+		"lat": -5.0896403,
+		"lon": -42.809588
+	},
+	{
+		"initial": "PR",
+		"name": "Paraná",
+		"capital": "Curitiba",
+		"lat": -25.4295963,
+		"lon": -49.2712724
+	},
+	{
+		"initial": "RJ",
+		"name": "Rio de Janeiro",
+		"capital": "Rio de Janeiro",
+		"lat": -22.9110137,
+		"lon": -43.2093727
+	},
+	{
+		"initial": "RN",
+		"name": "Rio Grande do Norte",
+		"capital": "Natal",
+		"lat": -5.805398,
+		"lon": -35.2080905
+	},
+	{
+		"initial": "RO",
+		"name": "Rondônia",
+		"capital": "Porto Velho",
+		"lat": -8.7494525,
+		"lon": -63.8735438
+	},
+	{
+		"initial": "RR",
+		"name": "Roraima",
+		"capital": "Boa Vista",
+		"lat": -2.8208478,
+		"lon": -60.6719582
+	},
+	{
+		"initial": "RS",
+		"name": "Rio Grande do Sul",
+		"capital": "Porto Alegre",
+		"lat": -30.0324999,
+		"lon": -51.2303767
+	},
+	{
+		"initial": "SC",
+		"name": "Santa Catarina",
+		"capital": "Florianópolis",
+		"lat": -27.5973002,
+		"lon": -48.5496098
+	},
+	{
+		"initial": "SE",
+		"name": "Sergipe",
+		"capital": "Aracaju",
+		"lat": -10.9162061,
+		"lon": -37.0774655
+	},
+	{
+		"initial": "SP",
+		"name": "São Paulo",
+		"capital": "São Paulo",
+		"lat": -23.5506507,
+		"lon": -46.6333824
+	},
+	{
+		"initial": "TO",
+		"name": "Tocantins",
+		"capital": "Palmas",
+		"lat": -26.483868,
+		"lon": -51.988812
+	}
+]
