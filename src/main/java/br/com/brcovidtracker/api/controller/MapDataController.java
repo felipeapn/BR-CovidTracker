@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.brcovidtracker.api.model.MapData;
+import br.com.brcovidtracker.api.model.MapDataDTO;
 import br.com.brcovidtracker.api.service.MapDataServide;
 
 @RestController
@@ -20,7 +20,7 @@ public class MapDataController {
 	private MapDataServide mapDataServide;
 
 	@GetMapping
-	public List<MapData> getMapData () {
+	public List<MapDataDTO> getMapData () {
 		
 		return this.mapDataServide.getMapData();
 	}

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.brcovidtracker.api.model.DaylyVirusData;
 import br.com.brcovidtracker.api.model.DaylyVirusDataFilter;
-import br.com.brcovidtracker.api.model.MapData;
+import br.com.brcovidtracker.api.model.MapDataDTO;
 import br.com.brcovidtracker.api.service.BrazilCapitalService;
 import br.com.brcovidtracker.api.service.CovidDataService;
 import br.com.brcovidtracker.api.service.MapDataServide;
@@ -24,22 +24,36 @@ public class MapDataServiceImpl implements MapDataServide {
 	private BrazilCapitalService brazilCapitalService;
 
 	@Override
-	public List<MapData> getMapData() {
+	public List<MapDataDTO> getMapData() {
 		
 		LocalDate lastDate = this.covidDataService.getLastDay();
 		
 		DaylyVirusDataFilter filter = new DaylyVirusDataFilter();
 		
-		MapData mapData = new MapData();
-		List<MapData> mapDatas = new ArrayList<MapData>();
+		//MapDataDTO mapData = new MapDataDTO();
+		List<MapDataDTO> mapDatas = new ArrayList<MapDataDTO>();
 		
 		filter.setFromDay(lastDate.toString());
 		
 		this.brazilCapitalService.getCapitals()
 			.forEach(capital -> {
 				filter.setState(capital.getInitial());
-				mapData.setDaylyVirusData(this.covidDataService.getSum(filter));
-				mapData.setBrazilCapital(capital);
+				DaylyVirusData sumByState = this.covidDataService.getSum(filter);
+				
+				MapDataDTO mapData = new MapDataDTO(
+						sumByState.getDate(),
+						sumByState.getCountry(),
+						sumByState.getState(),
+						capital.getName(),
+						capital.getCapital(),
+						capital.getLat(),
+						capital.getLon(),
+						sumByState.getNewDeaths(),
+						sumByState.getDeaths(),
+						sumByState.getNewCases(),
+						sumByState.getTotalCases()
+						);
+				
 				mapDatas.add(mapData);
 			});
 		
