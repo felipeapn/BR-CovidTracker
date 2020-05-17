@@ -16,7 +16,7 @@
 	<description>Work Order Controle</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
@@ -55,10 +55,6 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>
