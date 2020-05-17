@@ -68,8 +68,10 @@ public class CovidDataServiceImpl implements CovidDataService {
 
 		List<Predicate<DaylyVirusData>> allPredicates = this.createPredicate(filter);
 
-		return this.virusDataList.stream().filter(allPredicates.stream().reduce(x -> true, Predicate::and))
-				.collect(Collectors.toList());
+		return this.virusDataList.stream()
+								 .filter(allPredicates.stream()
+										 			  .reduce(x -> true, Predicate::and))
+								 .collect(Collectors.toList());
 	}
 
 	private List<Predicate<DaylyVirusData>> createPredicate(DaylyVirusDataFilter filter) {
