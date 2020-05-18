@@ -13,7 +13,7 @@ import br.com.brcovidtracker.api.service.BrazilCapitalService;
 
 @RestController
 @RequestMapping("capitals")
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class BrazilCapitalController {
 	
 	@Autowired
